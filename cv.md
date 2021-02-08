@@ -1,7 +1,7 @@
 # TATIANA MUKHORTOVA
 
 
-#### CONTACT ME: [Telegram](https://t.me/katiadeo) | [GitHub](https://github.com/katiadeo) :octocat:
+#### CONTACT ME: [Telegram](https://t.me/katiadeo) | [GitHub](https://github.com/katiadeo)
 
 
 ## SUMMARY
