@@ -56,3 +56,4 @@ Qualified as Translator in the field of professional communication (English)
 
 ### `English:` _fluent_  
  __IELTS General (07.11.2019)__ | _Results: 8 (8.0, 9.0, 7.0, 8.0)_  
+### `German:` _working knowledge_
