@@ -16,7 +16,7 @@ body {
   margin: auto;
   color: #ababab;
 
-  background: url(https://github.com/katiadeo/rsschool-cv/blob/rsschool-cv-html/img/bg_mountain.jpg) no-repeat center fixed;
+  background: url('./img/bg_mountain.jpg') no-repeat center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
