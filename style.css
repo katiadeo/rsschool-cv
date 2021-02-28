@@ -15,8 +15,7 @@ body {
   max-width: 100%;
   margin: auto;
   color: #ababab;
-
-  background: url('./img/bg_mountain.jpg') no-repeat center fixed;
+  background: url(./img/bg_mountain.jpg) no-repeat center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -56,6 +55,7 @@ body {
 }
 
 .rs-school-icon {
+  background: url(./img/rs_school_js.svg) no-repeat center/cover;
   width: 170px;
   height: 60px;
   margin-right: 40px;
@@ -86,7 +86,7 @@ body {
 }
 
 .gmail {
-  background: url("./img/email_grey.svg") no-repeat center/cover;
+  background: url(./img/email_grey.svg) no-repeat center/cover;
 }
 
 .telegram {
@@ -181,14 +181,13 @@ body {
   border-bottom: unset;
 }
 
-/* FLEX-PARENT */
+/* MAIN CONTAINER */
 .main {
   background-color: rgba(255, 255, 255, 0.1);
   border: none;
   width: 100%;
 }
 
-/* FLEX-CHILD */
 .container {
   margin: 20px;
   background-color: rgba(0, 0, 0, 0.7);
@@ -284,6 +283,7 @@ body {
   border: 3px solid rgba(211, 218, 215, 0.5);
   border-radius: 50px 10px;
 }
+
 .course-info {
   padding: 10px 20px;
   font-size: 22px;
@@ -358,6 +358,7 @@ body {
 .html {
   background: url(./img/html.svg) no-repeat center/contain;
 }
+
 .css {
   background: url(./img/css.svg) no-repeat center/contain;
 }
@@ -385,6 +386,7 @@ body {
   font-size: 20px;
   text-transform: uppercase;
 }
+
 .project-title a {
   color: rgba(165, 207, 190, 0.815);
   font-weight: bolder;
