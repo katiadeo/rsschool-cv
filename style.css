@@ -55,7 +55,7 @@ body {
 }
 
 .rs-school-icon {
-  background: url(/img/rs_school_js.svg) no-repeat center/cover;
+  background: url(./img/rs_school_js.svg) no-repeat center/cover;
   width: 170px;
   height: 60px;
   margin-right: 40px;
