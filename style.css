@@ -1,0 +1,450 @@
+body {
+  box-sizing: border-box;
+  font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  margin: auto;
+  color: #ababab;
+  background: url(./img/bg_mountain.jpg) no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.cv-wrapper {
+  width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* HEADER */
+.header {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+}
+
+/* FOOTER */
+.footer {
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-items {
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+}
+
+.footer li {
+  display: block;
+  float: right;
+  padding: 0 30px;
+}
+
+.footer .github {
+  background: url(./img/github_black.svg) no-repeat center/cover;
+}
+
+.year {
+  padding: 0 30px;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: #000;
+  text-shadow: 3px 3px 6px #000;
+}
+
+.rs-school-icon {
+
+  margin-right: 40px;
+}
+
+/* CONTACTS */
+.contacts {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contacts-icon {
+  display: inline-block;
+  margin: 0 24px;
+}
+
+.phone,
+.gmail,
+.telegram,
+.github {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+.phone {
+  background: url(./img/phone_grey.svg) no-repeat center/cover;
+}
+
+.gmail {
+  background: url(./img/email_grey.svg) no-repeat center/cover;
+}
+
+.telegram {
+  background: url(./img/telegram_grey.svg) no-repeat center/cover;
+}
+
+.github {
+  background: url(./img/github_grey.svg) no-repeat center/cover;
+}
+
+/* PROFILE */
+.profile,
+.main {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  margin: 40px 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 4px solid rgba(0, 0, 0, 0.2);
+}
+
+.profile-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 400px;
+  border: 2px solid #ababab;
+  border-radius: 40px;
+}
+
+.profile-photo {
+  width: 250px;
+  height: 270px;
+  margin-top: 25px;
+  background: no-repeat center/cover;
+  opacity: 0.6;
+  border-radius: 200px;
+  box-shadow: 0 0 0 3px #232b2b, 0 0 13px #333;
+}
+
+.profile-job {
+  margin-top: 30px;
+  padding: 0 30px;
+  border-top: 2px dashed #7a7a7a;
+}
+
+.profile-summary {
+  max-width: 1000px;
+  margin: 0 60px;
+}
+
+/* TEXTS */
+.job-title,
+.heading,
+.subheading {
+  text-align: center;
+  letter-spacing: 5px;
+  line-height: 60px;
+}
+
+.job-title {
+  font-size: 30px;
+}
+
+.heading,
+.subheading {
+  border-bottom: 2px dashed #7a7a7a;
+  font-size: 65px;
+  font-weight: lighter;
+  padding-bottom: 30px;
+}
+
+.subline {
+  font-size: 30px;
+  letter-spacing: 10px;
+  color: rgba(147, 211, 186, 0.616);
+  font-weight: 500;
+}
+
+.profile-text {
+  font-size: 24px;
+  line-height: 40px;
+}
+
+.subheading {
+  margin: auto;
+  padding: 0 15px;
+  font-size: 30px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  border-bottom: unset;
+}
+
+/* MAIN CONTAINER */
+.main {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 100%;
+}
+
+.container {
+  margin: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.2);
+}
+
+.container .subheading {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: inherit;
+}
+
+.foreign {
+  background: url(./img/map.png) no-repeat center/contain;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* LANGUAGES */
+.languages {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.lang,
+.project-title {
+  width: 120px;
+  height: 120px;
+  padding: 20px;
+  border: 6px solid rgba(0, 0, 0, 0.7);
+  background-color: rgba(9, 34, 24, 0.7);
+  border-radius: 50%;
+  margin: 15px;
+}
+
+.lang-text {
+  font-size: 14px;
+}
+
+.lang-per {
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+/* EDUCATION + EXPERIENCE */
+.colleges,
+.courses {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 15px 25px 0;
+}
+
+.colleges .college:first-child,
+.courses .course {
+  border-bottom: 2px dashed #7a7a7a;
+}
+
+.courses .course {
+  border: none;
+}
+
+.college {
+  text-align: center;
+  margin: 15px 20px 0 0;
+}
+
+.course {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.college-item,
+.course-item {
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 50px;
+}
+
+.course-item {
+  border: 4px solid rgba(0, 0, 0, 0.7);
+}
+
+.degree {
+  padding: 20px;
+  font-size: 22px;
+  text-align: center;
+  background-color: rgba(211, 218, 215, 0.1);
+  border: 3px solid rgba(211, 218, 215, 0.5);
+  border-radius: 50px 10px;
+}
+
+.course-info {
+  padding: 10px 20px;
+  font-size: 22px;
+  text-align: center;
+  background-color: rgba(74, 163, 125, 0.1);
+  border-radius: 50px 10px;
+}
+
+.duration {
+  display: inline-block;
+  margin: auto;
+  font-weight: 800;
+  letter-spacing: 5px;
+}
+
+/* SKILLS */
+.skills {
+  margin-top: 35px;
+  padding-left: 0;
+}
+
+.skills-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 15px;
+}
+
+.progress {
+  width: 400px;
+  height: 25px;
+  margin: auto 35px;
+  background-color: rgb(138, 197, 197, 0.2);
+  border-radius: 20px;
+  position: relative;
+}
+
+.progress::before {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background-color: rgba(147, 211, 186, 0.4);
+  border-radius: 20px;
+}
+
+.percent-70::before {
+  width: 70%;
+}
+.percent-50::before {
+  width: 50%;
+}
+.percent-20::before {
+  width: 20%;
+}
+.progress:hover::before {
+  background-color: rgba(123, 233, 89, 0.562);
+  cursor: progress;
+}
+
+.html,
+.css,
+.js,
+.java {
+  display: block;
+  width: 45px;
+  height: 45px;
+  margin: 10px 25px;
+  opacity: 0.6;
+}
+
+.html {
+  background: url(./img/html.svg) no-repeat center/contain;
+}
+
+.css {
+  background: url(./img/css.svg) no-repeat center/contain;
+}
+
+.js {
+  background: url(./img/js.svg) no-repeat center/contain;
+}
+
+.java {
+  background: url(./img/java.svg) no-repeat center/contain;
+}
+
+/* PROJECTS */
+.projects {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.project-title {
+  width: 160px;
+  height: 120px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.project-title a {
+  color: rgba(165, 207, 190, 0.815);
+  font-weight: bolder;
+  text-shadow: 5px 7px 10px #000;
+}
+
+.project-title:first-child {
+  background-color: rgba(19, 102, 87, 0.624);
+}
+
+/* LINKS */
+a {
+  text-decoration: none;
+  color: #ababab;
+}
+
+.course,
+.college {
+  list-style-type: none;
+}
+
+.course a,
+.college a {
+  padding: 5px 10px;
+  font-size: 22px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+}
+
+/* HOVER */
+.profile-photo:hover,
+.lang:hover,
+.contacts-icon a:hover,
+.project-title:hover,
+.html:hover,
+.css:hover,
+.js:hover,
+.java:hover,
+.college-item:hover,
+.course-item:hover,
+.rs-school-icon:hover {
+  transform: scale(1.1);
+  z-index: 1;
+  filter: drop-shadow(0px 0px 1px rgb(255, 255, 255, 0.5));
+  cursor: pointer;
+}
+
+.college-item:hover,
+.course-item:hover {
+  background-color: rgba(16, 76, 80, 0.2);
+}
