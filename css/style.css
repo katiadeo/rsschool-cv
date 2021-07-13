@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Montserrat';
   src: url("/assets/fonts/montserrat-v15-latin-regular.woff") format("woff");
@@ -330,4 +331,72 @@ a {
 
 .profile__info .description__text {
   padding-bottom: 20px;
+}
+
+/* PROJECTS */
+.projects__container {
+  background-color: rgba(5, 5, 5, 0.349);
+  border-radius: 20px;
+}
+
+.slider {
+  max-width: 90%;
+  /* Положение элемента устанавливается относительно его исходной позиции: */
+  position: relative;
+  margin: auto;
+  height: 200px;
+  /* Картинка масштабируется по отношению к родительскому элементу: */
+}
+
+.slider .item img {
+  /* Элемент меняет размер так, чтобы заполнить блок и сохранить пропорции: */
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.slider .item {
+  animation: fade 1.5s linear;
+}
+
+.slider .arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 35%;
+  width: auto;
+  font-size: 24px;
+  padding: 16px;
+  transition: .5s ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 35%;
+  width: auto;
+  font-size: 24px;
+  padding: 16px;
+  transition: .5s ease;
+}
+
+.arrow__prev {
+  left: 5%;
+}
+
+.arrow__next {
+  right: 5%;
+}
+
+.arrow__prev:hover, .arrow__next:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
