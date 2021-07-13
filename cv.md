@@ -116,7 +116,7 @@ Qualified as Translator in the field of professional communication (English)
 
 
 ## LANGUAGES
-![World map](https://github.com/katiadeo/images/blob/main/world_map.bmp)
+![World map](https://i.ibb.co/4YXzg18/map.png)
 
 ### `English:` _fluent_  
  __IELTS General (07.11.2019)__ | _Results: 8 (8.0, 9.0, 7.0, 8.0)_  
