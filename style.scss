@@ -7,11 +7,11 @@
 html {
     overflow-y: scroll;
     scroll-behavior: smooth;
+    height: 100vh;
 }
 
 body {
     width: 100%;
-    height: 100%;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
@@ -40,6 +40,37 @@ body {
 
 a {
     text-decoration: none;
+}
+
+// HEADINGS
+.heading {
+    text-transform: uppercase;
+    font-size: 45px;
+    font-weight: lighter;
+    letter-spacing: 5px;
+    line-height: 60px;
+    margin: 10px 0;
+    cursor: pointer;
+
+    &::after {
+        border-bottom: 2px dashed rgba(206, 206, 206, 0.6);
+        display: block;
+        content: "";
+        height: 2px;
+        width: 0;
+        transition: width 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+.subheading {
+    @extend .heading;
+    font-size: 30px;
+    letter-spacing: 0;
+    text-align: center;
 }
 
 /* HEADER */
@@ -202,7 +233,7 @@ a {
     }
 }
 
-// MEDIA QUERY
+// MEDIA QUERY FOR BURGER
 @media screen and (max-width: 768px) {
     .burger {
         display: inline-block;
@@ -234,6 +265,9 @@ a {
     width: 100%;
     height: 100%;
     background: url("/assets/img/jpg/bg-pc-mouse.jpg") no-repeat center/cover fixed;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
 }
 
 /* PROFILE */
@@ -254,7 +288,7 @@ a {
         height: 250px;
         border-radius: 50%;
         background-color: rgba(0, 0, 0, 0.5);
-        margin-bottom: 15%;
+        margin-bottom: 5%;
         position: relative;
 
         img {
@@ -317,29 +351,11 @@ a {
         border-radius: 20px;
         text-align: center;
 
-        .heading {
-            text-transform: uppercase;
-            font-size: 45px;
-            font-weight: lighter;
-            letter-spacing: 5px;
-            line-height: 60px;
-
-            &::after {
-                border-bottom: 2px dashed #cecece;
-                display: block;
-                content: "";
-                height: 2px;
-                width: 100%;
-                transition: width 0.3s ease-in-out;
-            }
-
-            &:hover::after {
-                width: 0%;
-            }
-        }
-
         .description {
-            padding: 10px 30px;
+            display: flex;
+            flex-flow: column wrap;
+            row-gap: 10px;
+            padding: 10px 30px 20px;
 
             &__title {
                 font-size: 30px;
@@ -350,113 +366,160 @@ a {
             }
 
             &__text {
-                padding-bottom: 20px;
+                background-color: rgba(74, 78, 77, 0.164);
+                border-radius: 20px;
+                padding: 20px;
+                line-height: 24px;
             }
         }
     }
 }
 
 /* PROJECTS */
-.projects__container {
-    background-color: rgba(5, 5, 5, 0.349);
-    border-radius: 20px;
+.projects {
+    &__container {
+        background-color: rgba(5, 5, 5, 0.349);
+        border-radius: 20px;
+        .slider {
+            max-width: 90%;
+            /* Положение элемента устанавливается относительно его исходной позиции: */
+            position: relative;
+            margin: auto;
+            height: 200px;
+
+            /* Картинка масштабируется по отношению к родительскому элементу: */
+            .item img {
+                /* Элемент меняет размер так, чтобы заполнить блок и сохранить пропорции: */
+                object-fit: cover;
+                width: 100%;
+                height: 200px;
+            }
+
+            .item {
+                animation: fade 1.5s linear;
+            }
+
+            .arrow {
+                cursor: pointer;
+                position: absolute;
+                top: 35%;
+                width: auto;
+                font-size: 24px;
+                padding: 16px;
+                transition: 0.5s ease;
+
+                &__prev {
+                    left: 5%;
+                }
+
+                &__next {
+                    right: 5%;
+                }
+
+                &__prev:hover,
+                &__next:hover {
+                    background-color: rgba(0, 0, 0, 0.2);
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
 }
 
-.slider {
-    max-width: 90%;
-    /* Положение элемента устанавливается относительно его исходной позиции: */
-    position: relative;
-    margin: auto;
-    height: 200px;
-
-    /* Картинка масштабируется по отношению к родительскому элементу: */
-    .item img {
-        /* Элемент меняет размер так, чтобы заполнить блок и сохранить пропорции: */
-        object-fit: cover;
-        width: 100%;
-        height: 200px;
-    }
-
-    .item {
-        animation: fade 1.5s linear;
-    }
-
-    .arrow {
-        cursor: pointer;
-        position: absolute;
-        top: 35%;
-        width: auto;
-        font-size: 24px;
-        padding: 16px;
-        transition: 0.5s ease;
+.skills {
+    &__container {
+        @extend .projects__container;
     }
 }
 
-.arrow {
-    cursor: pointer;
-    position: absolute;
-    top: 35%;
-    width: auto;
-    font-size: 24px;
-    padding: 16px;
-    transition: 0.5s ease;
-
-    &__prev {
-        left: 5%;
-    }
-
-    &__next {
-        right: 5%;
-    }
-
-    &__prev:hover,
-    &__next:hover {
-        background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
+.education {
+    &__container {
+        @extend .projects__container;
     }
 }
 
 /* FOOTER */
 .footer {
     background-color: rgb(0, 0, 0);
+    box-shadow: 0 -6px 15px -1px rgba(0, 0, 0, 0.89);
     min-height: 120px;
+
+    &__container {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .item {
+            .github svg {
+                width: 40px;
+
+                .svg-fill {
+                    fill: rgb(167, 175, 182);
+
+                    &:hover {
+                        fill: rgb(255, 255, 255);
+                    }
+                }
+            }
+
+            .rsschool svg {
+                width: 80px;
+                &:hover {
+                    fill: rgb(255, 255, 255);
+                }
+            }
+            .rsschool .svg-fill {
+                fill: rgb(167, 175, 182);
+            }
+
+            .year {
+                font-size: 18px;
+                color: rgb(167, 175, 182);
+            }
+        }
+    }
 }
 
 /* ANIMATIONS */
 @keyframes slidein {
-  0% {
-      transform: translate3d(100px, 0, 0);
-  }
-  100% {
-      transform: translate3d(0, 0, 0);
-  }
+    0% {
+        transform: translate3d(100px, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 @keyframes slideout {
-  100% {
-      transform: translate3d(0, 0, 0);
-  }
-  0% {
-      transform: translate3d(100px, 0, 0);
-  }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+    0% {
+        transform: translate3d(100px, 0, 0);
+    }
 }
 
 @keyframes pulse {
-  from {
-      box-shadow: 0 0 0 0px rgba(255, 255, 255, 0);
-      background: rgba(255, 255, 255, 0);
-  }
-  to {
-      box-shadow: 0 0 0 1000px rgb(0, 0, 0);
-      background: rgb(0, 0, 0);
-  }
+    from {
+        box-shadow: 0 0 0 0px rgba(255, 255, 255, 0);
+        background: rgba(255, 255, 255, 0);
+    }
+    to {
+        box-shadow: 0 0 0 1000px rgb(0, 0, 0);
+        background: rgb(0, 0, 0);
+    }
 }
 
 @keyframes fade {
-  from {
-      opacity: 0.4;
-  }
-  to {
-      opacity: 1;
-  }
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
 }

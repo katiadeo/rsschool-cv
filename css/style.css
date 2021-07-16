@@ -8,11 +8,11 @@
 html {
   overflow-y: scroll;
   scroll-behavior: smooth;
+  height: 100vh;
 }
 
 body {
   width: 100%;
-  height: 100%;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
@@ -41,6 +41,35 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.heading, .subheading {
+  text-transform: uppercase;
+  font-size: 45px;
+  font-weight: lighter;
+  letter-spacing: 5px;
+  line-height: 60px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.heading::after, .subheading::after {
+  border-bottom: 2px dashed rgba(206, 206, 206, 0.6);
+  display: block;
+  content: "";
+  height: 2px;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.heading:hover::after, .subheading:hover::after {
+  width: 100%;
+}
+
+.subheading {
+  font-size: 30px;
+  letter-spacing: 0;
+  text-align: center;
 }
 
 /* HEADER */
@@ -227,6 +256,9 @@ a {
   width: 100%;
   height: 100%;
   background: url("/assets/img/jpg/bg-pc-mouse.jpg") no-repeat center/cover fixed;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
 }
 
 /* PROFILE */
@@ -248,7 +280,7 @@ a {
   height: 250px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
-  margin-bottom: 15%;
+  margin-bottom: 5%;
   position: relative;
 }
 
@@ -312,29 +344,11 @@ a {
   text-align: center;
 }
 
-.profile__data .heading {
-  text-transform: uppercase;
-  font-size: 45px;
-  font-weight: lighter;
-  letter-spacing: 5px;
-  line-height: 60px;
-}
-
-.profile__data .heading::after {
-  border-bottom: 2px dashed #cecece;
-  display: block;
-  content: "";
-  height: 2px;
-  width: 100%;
-  transition: width 0.3s ease-in-out;
-}
-
-.profile__data .heading:hover::after {
-  width: 0%;
-}
-
 .profile__data .description {
-  padding: 10px 30px;
+  display: flex;
+  flex-flow: column wrap;
+  row-gap: 10px;
+  padding: 10px 30px 20px;
 }
 
 .profile__data .description__title {
@@ -346,16 +360,19 @@ a {
 }
 
 .profile__data .description__text {
-  padding-bottom: 20px;
+  background-color: rgba(74, 78, 77, 0.164);
+  border-radius: 20px;
+  padding: 20px;
+  line-height: 24px;
 }
 
 /* PROJECTS */
-.projects__container {
+.projects__container, .skills__container, .education__container {
   background-color: rgba(5, 5, 5, 0.349);
   border-radius: 20px;
 }
 
-.slider {
+.projects__container .slider, .skills__container .slider, .education__container .slider {
   max-width: 90%;
   /* Положение элемента устанавливается относительно его исходной позиции: */
   position: relative;
@@ -364,18 +381,18 @@ a {
   /* Картинка масштабируется по отношению к родительскому элементу: */
 }
 
-.slider .item img {
+.projects__container .slider .item img, .skills__container .slider .item img, .education__container .slider .item img {
   /* Элемент меняет размер так, чтобы заполнить блок и сохранить пропорции: */
   object-fit: cover;
   width: 100%;
   height: 200px;
 }
 
-.slider .item {
+.projects__container .slider .item, .skills__container .slider .item, .education__container .slider .item {
   animation: fade 1.5s linear;
 }
 
-.slider .arrow {
+.projects__container .slider .arrow, .skills__container .slider .arrow, .education__container .slider .arrow {
   cursor: pointer;
   position: absolute;
   top: 35%;
@@ -385,25 +402,15 @@ a {
   transition: 0.5s ease;
 }
 
-.arrow {
-  cursor: pointer;
-  position: absolute;
-  top: 35%;
-  width: auto;
-  font-size: 24px;
-  padding: 16px;
-  transition: 0.5s ease;
-}
-
-.arrow__prev {
+.projects__container .slider .arrow__prev, .skills__container .slider .arrow__prev, .education__container .slider .arrow__prev {
   left: 5%;
 }
 
-.arrow__next {
+.projects__container .slider .arrow__next, .skills__container .slider .arrow__next, .education__container .slider .arrow__next {
   right: 5%;
 }
 
-.arrow__prev:hover, .arrow__next:hover {
+.projects__container .slider .arrow__prev:hover, .skills__container .slider .arrow__prev:hover, .education__container .slider .arrow__prev:hover, .projects__container .slider .arrow__next:hover, .skills__container .slider .arrow__next:hover, .education__container .slider .arrow__next:hover {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
@@ -411,7 +418,48 @@ a {
 /* FOOTER */
 .footer {
   background-color: black;
+  box-shadow: 0 -6px 15px -1px rgba(0, 0, 0, 0.89);
   min-height: 120px;
+}
+
+.footer__container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.footer__items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer__items .item .github svg {
+  width: 40px;
+}
+
+.footer__items .item .github svg .svg-fill {
+  fill: #a7afb6;
+}
+
+.footer__items .item .github svg .svg-fill:hover {
+  fill: white;
+}
+
+.footer__items .item .rsschool svg {
+  width: 80px;
+}
+
+.footer__items .item .rsschool svg:hover {
+  fill: white;
+}
+
+.footer__items .item .rsschool .svg-fill {
+  fill: #a7afb6;
+}
+
+.footer__items .item .year {
+  font-size: 18px;
+  color: #a7afb6;
 }
 
 /* ANIMATIONS */
