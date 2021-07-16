@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   src: url("/assets/fonts/montserrat-v15-latin-regular.woff") format("woff");
   src: url("/assets/fonts/montserrat-v15-latin-regular.woff2") format("woff2");
 }
@@ -23,7 +23,7 @@ body {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-  transition: .25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 .wrapper {
@@ -85,12 +85,12 @@ a {
   background: linear-gradient(to right, rgba(255, 255, 255, 0.137) 50%, transparent 50%);
   background-size: 200% 100%;
   background-position: right bottom;
-  transition: all .5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .nav__link:hover {
   border-radius: 0.6em;
-  box-shadow: inset -7px -15px 10px -20px #000000,inset 10px 17px 10px -20px #ffffff;
+  box-shadow: inset -7px -15px 10px -20px #000000, inset 10px 17px 10px -20px #ffffff;
   background-position: left bottom;
 }
 
@@ -176,7 +176,7 @@ a {
   left: 0;
   width: 34px;
   background-color: white;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
 .header__container.active .burger > span::before {
@@ -191,7 +191,7 @@ a {
   visibility: visible;
   clip-path: circle(150%);
   animation: pulse 1.5s;
-  transition: opacity .4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 
 .header__container.active .nav__link {
@@ -208,7 +208,7 @@ a {
     position: fixed;
     top: 0;
     right: 0;
-    content: '';
+    content: "";
     width: 300px;
     background: black;
     box-shadow: 0 0 0 1000px black;
@@ -219,36 +219,6 @@ a {
   .nav__links {
     flex-direction: column;
     min-height: 330px;
-  }
-}
-
-/* ANIMATION */
-@keyframes slidein {
-  0% {
-    transform: translate3d(100px, 0, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideout {
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-  0% {
-    transform: translate3d(100px, 0, 0);
-  }
-}
-
-@keyframes pulse {
-  from {
-    box-shadow: 0 0 0 0px rgba(255, 255, 255, 0);
-    background: rgba(255, 255, 255, 0);
-  }
-  to {
-    box-shadow: 0 0 0 1000px black;
-    background: black;
   }
 }
 
@@ -272,21 +242,67 @@ a {
   column-gap: 5%;
 }
 
-.profile__img {
-  width: 200px;
-  height: 200px;
+.profile__info {
+  display: flex;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
-  margin-bottom: 5%;
+  margin-bottom: 15%;
+  position: relative;
 }
 
-.profile__img img {
+.profile__info img {
   object-fit: cover;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.44);
+  box-shadow: 10px 10px 10px #000000;
+  opacity: 0.6;
 }
 
-.profile__info {
+.profile__info img:hover {
+  transform: rotateY(30deg);
+  transition: 0.5s ease;
+}
+
+.profile__info .contacts {
+  display: flex;
+  justify-content: center;
+}
+
+.profile__info .contacts__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  width: 60%;
+  height: 55%;
+  position: absolute;
+  top: 23%;
+  left: 50%;
+}
+
+.profile__info .contacts svg {
+  width: 25px;
+  height: 25px;
+}
+
+.profile__info .contacts svg .svg-fill {
+  fill: #bbbbbb;
+}
+
+.profile__info .contacts svg:hover {
+  transform: scale(1.2);
+}
+
+.profile__info .contacts svg:hover .svg-fill {
+  fill: white;
+}
+
+.profile__data {
   background-color: rgba(74, 78, 77, 0.164);
   display: flex;
   justify-content: center;
@@ -296,7 +312,7 @@ a {
   text-align: center;
 }
 
-.profile__info .heading {
+.profile__data .heading {
   text-transform: uppercase;
   font-size: 45px;
   font-weight: lighter;
@@ -304,24 +320,24 @@ a {
   line-height: 60px;
 }
 
-.profile__info .heading::after {
+.profile__data .heading::after {
   border-bottom: 2px dashed #cecece;
   display: block;
-  content: '';
+  content: "";
   height: 2px;
   width: 100%;
-  transition: width .3s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 
-.profile__info .heading:hover::after {
+.profile__data .heading:hover::after {
   width: 0%;
 }
 
-.profile__info .description {
+.profile__data .description {
   padding: 10px 30px;
 }
 
-.profile__info .description__title {
+.profile__data .description__title {
   font-size: 30px;
   letter-spacing: 5px;
   color: rgba(16, 17, 16, 0.849);
@@ -329,7 +345,7 @@ a {
   margin-bottom: 10px;
 }
 
-.profile__info .description__text {
+.profile__data .description__text {
   padding-bottom: 20px;
 }
 
@@ -366,16 +382,7 @@ a {
   width: auto;
   font-size: 24px;
   padding: 16px;
-  transition: .5s ease;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
+  transition: 0.5s ease;
 }
 
 .arrow {
@@ -385,7 +392,7 @@ a {
   width: auto;
   font-size: 24px;
   padding: 16px;
-  transition: .5s ease;
+  transition: 0.5s ease;
 }
 
 .arrow__prev {
@@ -399,4 +406,49 @@ a {
 .arrow__prev:hover, .arrow__next:hover {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+}
+
+/* FOOTER */
+.footer {
+  background-color: black;
+  min-height: 120px;
+}
+
+/* ANIMATIONS */
+@keyframes slidein {
+  0% {
+    transform: translate3d(100px, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideout {
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  0% {
+    transform: translate3d(100px, 0, 0);
+  }
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 0 0px rgba(255, 255, 255, 0);
+    background: rgba(255, 255, 255, 0);
+  }
+  to {
+    box-shadow: 0 0 0 1000px black;
+    background: black;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
