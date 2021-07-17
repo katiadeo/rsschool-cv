@@ -99,13 +99,12 @@ ul {
         max-width: 1200px;
         padding: 20px 0;
     }
-}
 
-/* NAV */
-.header__nav {
-    display: block;
-    width: 100%;
-    transition: all 500ms ease-in-out;
+    &__nav {
+        display: block;
+        width: 100%;
+        transition: all 500ms ease-in-out;
+    }
 }
 
 .nav__links {
@@ -244,33 +243,6 @@ ul {
     }
 }
 
-// MEDIA QUERY FOR BURGER
-@media screen and (max-width: 910px) {
-    .burger {
-        display: inline-block;
-        animation: 0.3s slidein linear;
-    }
-
-    .header__nav {
-        display: block;
-        position: fixed;
-        top: 0;
-        right: 0;
-        content: "";
-        width: 300px;
-        background: rgb(0, 0, 0);
-        box-shadow: 0 0 0 1000px rgb(0, 0, 0);
-        transition: all 500ms ease-in-out;
-        clip-path: circle(30px at calc(100% - 65px) 65px);
-        visibility: hidden;
-    }
-
-    .nav__links {
-        flex-direction: column;
-        min-height: 330px;
-    }
-}
-
 /* MAIN */
 .main {
     width: 100%;
@@ -279,6 +251,7 @@ ul {
     display: flex;
     flex-direction: column;
     row-gap: 40px;
+    padding-bottom: 100px;
 }
 
 /* PROFILE */
@@ -469,9 +442,9 @@ ul {
             color: rgba(206, 206, 206, 0.768);
             border-radius: 10px;
             padding: 30px 10px;
+            transition: all 2s ease-out;
 
             &:hover {
-                transition: all 2s ease;
                 transform: scale(0.96);
                 color: rgb(0, 0, 0);
                 background-color: rgba(206, 206, 206, 0.097);
@@ -487,6 +460,53 @@ ul {
 .languages {
     &__container {
         @extend .projects__container;
+        background: url("/assets/img/png/map.png") no-repeat center/contain;
+        background-color: rgba(0, 0, 0, 0.4);
+        transition: all 2s ease-out;
+
+        &:hover .language {
+            transform: scale(0.96);
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .languages__wrapper {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            column-gap: 20px;
+
+            .language {
+                width: 110px;
+                height: 110px;
+                padding: 20px;
+                border: 3px solid rgba(0, 0, 0, 0.534);
+                background-color: rgba(161, 161, 161, 0.7);
+                border-radius: 50%;
+                margin-bottom: 20px;
+                text-align: center;
+                transition: 0.8s ease-in-out;
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1);
+                    color: rgba(199, 199, 199, 0.493);
+                    background-color: rgba(0, 0, 0, 0.096);
+                    border: unset;
+                }
+
+                &__name {
+                    font-size: 14px;
+                }
+
+                &__skill {
+                    font-size: 20px;
+                }
+            }
+        }
     }
 }
 
@@ -573,5 +593,32 @@ ul {
     }
     to {
         opacity: 1;
+    }
+}
+
+// MEDIA QUERY FOR BURGER
+@media screen and (max-width: 910px) {
+    .burger {
+        display: inline-block;
+        animation: 0.3s slidein linear;
+    }
+
+    .header__nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        content: "";
+        width: 300px;
+        background: rgb(0, 0, 0);
+        box-shadow: 0 0 0 1000px rgb(0, 0, 0);
+        transition: all 500ms ease-in-out;
+        clip-path: circle(30px at calc(100% - 65px) 65px);
+        visibility: hidden;
+    }
+
+    .nav__links {
+        flex-direction: column;
+        min-height: 330px;
     }
 }
