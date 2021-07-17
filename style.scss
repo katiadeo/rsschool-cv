@@ -42,6 +42,10 @@ a {
     text-decoration: none;
 }
 
+ul {
+    list-style-type: none;
+}
+
 // HEADINGS
 .heading {
     text-transform: uppercase;
@@ -73,6 +77,13 @@ a {
     text-align: center;
 }
 
+.title {
+    font-size: 20px;
+    letter-spacing: 5px;
+    color: rgba(16, 17, 16, 0.849);
+    font-weight: 500;
+}
+
 /* HEADER */
 .header {
     position: fixed;
@@ -98,7 +109,6 @@ a {
 }
 
 .nav__links {
-    list-style-type: none;
     text-align: center;
     padding: 1em;
     display: flex;
@@ -116,6 +126,7 @@ a {
     background-size: 200% 100%;
     background-position: right bottom;
     transition: all 0.5s ease-out;
+    text-transform: uppercase;
 
     &:hover {
         border-radius: 0.6em;
@@ -234,7 +245,7 @@ a {
 }
 
 // MEDIA QUERY FOR BURGER
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 910px) {
     .burger {
         display: inline-block;
         animation: 0.3s slidein linear;
@@ -264,7 +275,7 @@ a {
 .main {
     width: 100%;
     height: 100%;
-    background: url("/assets/img/jpg/bg-pc-mouse.jpg") no-repeat center/cover fixed;
+    background: url("../assets/img/jpg/bg-pc-mouse.jpg") no-repeat center/cover fixed;
     display: flex;
     flex-direction: column;
     row-gap: 40px;
@@ -315,12 +326,11 @@ a {
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
-                list-style-type: none;
                 width: 60%;
                 height: 55%;
                 position: absolute;
                 top: 23%;
-                left: 50%;
+                left: 42%;
             }
 
             svg {
@@ -380,16 +390,16 @@ a {
     &__container {
         background-color: rgba(5, 5, 5, 0.349);
         border-radius: 20px;
+        padding: 20px 0;
+
+        // taken as a basis ----- to be updated
         .slider {
             max-width: 90%;
-            /* Положение элемента устанавливается относительно его исходной позиции: */
             position: relative;
             margin: auto;
             height: 200px;
 
-            /* Картинка масштабируется по отношению к родительскому элементу: */
             .item img {
-                /* Элемент меняет размер так, чтобы заполнить блок и сохранить пропорции: */
                 object-fit: cover;
                 width: 100%;
                 height: 200px;
@@ -433,6 +443,48 @@ a {
 }
 
 .education {
+    &__container {
+        @extend .projects__container;
+    }
+
+    .colleges {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 20px;
+        text-align: center;
+        margin: 40px;
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            row-gap: 8px;
+            font-size: 18px;
+        }
+
+        &__title {
+            @extend .title;
+            background-color: rgba(0, 0, 0, 0.282);
+            color: rgba(206, 206, 206, 0.768);
+            border-radius: 10px;
+            padding: 30px 10px;
+
+            &:hover {
+                transition: all 2s ease;
+                transform: scale(0.96);
+                color: rgb(0, 0, 0);
+                background-color: rgba(206, 206, 206, 0.097);
+            }
+        }
+
+        &__study-time {
+            font-weight: 600;
+        }
+    }
+}
+
+.languages {
     &__container {
         @extend .projects__container;
     }

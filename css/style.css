@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Montserrat";
   src: url("/assets/fonts/montserrat-v15-latin-regular.woff") format("woff");
@@ -43,6 +42,10 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .heading, .subheading {
   text-transform: uppercase;
   font-size: 45px;
@@ -72,6 +75,13 @@ a {
   text-align: center;
 }
 
+.title, .education .colleges__title {
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: rgba(16, 17, 16, 0.849);
+  font-weight: 500;
+}
+
 /* HEADER */
 .header {
   position: fixed;
@@ -97,7 +107,6 @@ a {
 }
 
 .nav__links {
-  list-style-type: none;
   text-align: center;
   padding: 1em;
   display: flex;
@@ -115,6 +124,7 @@ a {
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all 0.5s ease-out;
+  text-transform: uppercase;
 }
 
 .nav__link:hover {
@@ -227,7 +237,7 @@ a {
   animation: 0.5s slidein linear;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 910px) {
   .burger {
     display: inline-block;
     animation: 0.3s slidein linear;
@@ -255,7 +265,7 @@ a {
 .main {
   width: 100%;
   height: 100%;
-  background: url("/assets/img/jpg/bg-pc-mouse.jpg") no-repeat center/cover fixed;
+  background: url("../assets/img/jpg/bg-pc-mouse.jpg") no-repeat center/cover fixed;
   display: flex;
   flex-direction: column;
   row-gap: 40px;
@@ -309,12 +319,11 @@ a {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  list-style-type: none;
   width: 60%;
   height: 55%;
   position: absolute;
   top: 23%;
-  left: 50%;
+  left: 42%;
 }
 
 .profile__info .contacts svg {
@@ -367,32 +376,30 @@ a {
 }
 
 /* PROJECTS */
-.projects__container, .skills__container, .education__container {
+.projects__container, .skills__container, .education__container, .languages__container {
   background-color: rgba(5, 5, 5, 0.349);
   border-radius: 20px;
+  padding: 20px 0;
 }
 
-.projects__container .slider, .skills__container .slider, .education__container .slider {
+.projects__container .slider, .skills__container .slider, .education__container .slider, .languages__container .slider {
   max-width: 90%;
-  /* Положение элемента устанавливается относительно его исходной позиции: */
   position: relative;
   margin: auto;
   height: 200px;
-  /* Картинка масштабируется по отношению к родительскому элементу: */
 }
 
-.projects__container .slider .item img, .skills__container .slider .item img, .education__container .slider .item img {
-  /* Элемент меняет размер так, чтобы заполнить блок и сохранить пропорции: */
+.projects__container .slider .item img, .skills__container .slider .item img, .education__container .slider .item img, .languages__container .slider .item img {
   object-fit: cover;
   width: 100%;
   height: 200px;
 }
 
-.projects__container .slider .item, .skills__container .slider .item, .education__container .slider .item {
+.projects__container .slider .item, .skills__container .slider .item, .education__container .slider .item, .languages__container .slider .item {
   animation: fade 1.5s linear;
 }
 
-.projects__container .slider .arrow, .skills__container .slider .arrow, .education__container .slider .arrow {
+.projects__container .slider .arrow, .skills__container .slider .arrow, .education__container .slider .arrow, .languages__container .slider .arrow {
   cursor: pointer;
   position: absolute;
   top: 35%;
@@ -402,17 +409,52 @@ a {
   transition: 0.5s ease;
 }
 
-.projects__container .slider .arrow__prev, .skills__container .slider .arrow__prev, .education__container .slider .arrow__prev {
+.projects__container .slider .arrow__prev, .skills__container .slider .arrow__prev, .education__container .slider .arrow__prev, .languages__container .slider .arrow__prev {
   left: 5%;
 }
 
-.projects__container .slider .arrow__next, .skills__container .slider .arrow__next, .education__container .slider .arrow__next {
+.projects__container .slider .arrow__next, .skills__container .slider .arrow__next, .education__container .slider .arrow__next, .languages__container .slider .arrow__next {
   right: 5%;
 }
 
-.projects__container .slider .arrow__prev:hover, .skills__container .slider .arrow__prev:hover, .education__container .slider .arrow__prev:hover, .projects__container .slider .arrow__next:hover, .skills__container .slider .arrow__next:hover, .education__container .slider .arrow__next:hover {
+.projects__container .slider .arrow__prev:hover, .skills__container .slider .arrow__prev:hover, .education__container .slider .arrow__prev:hover, .languages__container .slider .arrow__prev:hover, .projects__container .slider .arrow__next:hover, .skills__container .slider .arrow__next:hover, .education__container .slider .arrow__next:hover, .languages__container .slider .arrow__next:hover {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+}
+
+.education .colleges {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  text-align: center;
+  margin: 40px;
+}
+
+.education .colleges__item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  font-size: 18px;
+}
+
+.education .colleges__title {
+  background-color: rgba(0, 0, 0, 0.282);
+  color: rgba(206, 206, 206, 0.768);
+  border-radius: 10px;
+  padding: 30px 10px;
+}
+
+.education .colleges__title:hover {
+  transition: all 2s ease;
+  transform: scale(0.96);
+  color: black;
+  background-color: rgba(206, 206, 206, 0.097);
+}
+
+.education .colleges__study-time {
+  font-weight: 600;
 }
 
 /* FOOTER */

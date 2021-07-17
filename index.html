@@ -18,11 +18,12 @@
                     </button>
                     <nav class="header__nav">
                         <ul class="nav__links">
-                            <li class="nav__link"><a href="#profile">PROFILE</a></li>
-                            <li class="nav__link"><a href="#">CONTACT</a></li>
-                            <li class="nav__link"><a href="#">EDUCATION</a></li>
-                            <li class="nav__link"><a href="#">SKILLS</a></li>
-                            <li class="nav__link"><a href="#projects">PROJECTS</a></li>
+                            <li class="nav__link"><a href="#profile">Profile</a></li>
+                            <li class="nav__link"><a href="#contacts">Contacts</a></li>
+                            <li class="nav__link"><a href="#education">Education</a></li>
+                            <li class="nav__link"><a href="#skills">Skills</a></li>
+                            <li class="nav__link"><a href="#projects">Projects</a></li>
+                            <li class="nav__link"><a href="#projects">Languages</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -33,8 +34,10 @@
                 <section class="profile" id="profile">
                     <div class="container profile__container">
                         <div class="profile__info">
-                            <a href="https://www.facebook.com/tatti.katiadeo/"><img class="profile__img" src="/assets/img/jpg/profile2.jpg" alt="Profile photo" /></a>
-                            <div class="contacts">
+                            <a href="https://www.facebook.com/tatti.katiadeo/">
+                                <img class="profile__img" src="./assets/img/jpg/profile2.jpg" alt="Profile photo" />
+                            </a>
+                            <div class="contacts" id="contacts">
                                 <ul class="contacts__list">
                                     <li class="contacts__item">
                                         <a href="tel:+79600435127" class="phone">
@@ -104,15 +107,33 @@
                     </div>
                 </section>
                 <!-- SKILLS -->
-                <section class="skills">
+                <section class="skills" id="skills">
                     <div class="container skills__container">
                         <h2 class="subheading">Skills</h2>
                     </div>
                 </section>
                 <!-- EDUCATION -->
-                <section class="education">
+                <section class="education" id="education">
                     <div class="container education__container">
                         <h2 class="subheading">Education</h2>
+                        <ul class="colleges">
+                            <li class="colleges__item">
+                                <a class="colleges__title" href="https://kpfu.ru/eng">Kazan Federal University</a>
+                                <p class="colleges__study-time">2009 - 2014</p>
+                                <p class="colleges__degree">Higher: Qualified as Teacher of Foreign Languages (English and German)</p>
+                            </li>
+                            <li class="colleges__item">
+                                <a class="colleges__title" href="https://kpfu.ru/eng/academic-units/all-institutes-and-faculties/elabuga-institute">Elabuga Institute</a>
+                                <p class="colleges__study-time">2011 - 2013</p>
+                                <p class="colleges__degree">Professional retraining: Qualified as Translator in the field of professional communication (English)</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- LANGUAGES-->
+                <section class="languages" id="languages">
+                    <div class="container languages__container">
+                        <h2 class="subheading">Languages</h2>
                     </div>
                 </section>
             </main>
