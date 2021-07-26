@@ -359,38 +359,57 @@ ul {
 }
 
 .projects__container .slider, .skills__container .slider, .education__container .slider, .languages__container .slider {
-  max-width: 90%;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  max-width: 60%;
   position: relative;
   margin: auto;
-  height: 200px;
 }
 
-.projects__container .slider .item img, .skills__container .slider .item img, .education__container .slider .item img, .languages__container .slider .item img {
-  object-fit: cover;
-  width: 100%;
-  height: 200px;
-}
-
-.projects__container .slider .item, .skills__container .slider .item, .education__container .slider .item, .languages__container .slider .item {
+.projects__container .slider__slide, .skills__container .slider__slide, .education__container .slider__slide, .languages__container .slider__slide {
   animation: fade 1.5s linear;
+  border-radius: 10px;
+  padding: 20px 60px;
+}
+
+.projects__container .slider__slide img, .skills__container .slider__slide img, .education__container .slider__slide img, .languages__container .slider__slide img {
+  object-fit: contain;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 20px;
+  transition: 0.5s ease;
+}
+
+.projects__container .slider__slide img:hover, .skills__container .slider__slide img:hover, .education__container .slider__slide img:hover, .languages__container .slider__slide img:hover {
+  transform: scale(1.02);
+  box-shadow: 4px 4px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
 .projects__container .slider .arrow, .skills__container .slider .arrow, .education__container .slider .arrow, .languages__container .slider .arrow {
   cursor: pointer;
   position: absolute;
-  top: 35%;
+  top: 40%;
   width: auto;
   font-size: 24px;
   padding: 16px;
   transition: 0.5s ease;
 }
 
+@media screen and (max-width: 910px) {
+  .projects__container .slider .arrow, .skills__container .slider .arrow, .education__container .slider .arrow, .languages__container .slider .arrow {
+    top: 35%;
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
 .projects__container .slider .arrow__prev, .skills__container .slider .arrow__prev, .education__container .slider .arrow__prev, .languages__container .slider .arrow__prev {
-  left: 5%;
+  left: 2%;
 }
 
 .projects__container .slider .arrow__next, .skills__container .slider .arrow__next, .education__container .slider .arrow__next, .languages__container .slider .arrow__next {
-  right: 5%;
+  right: 2%;
 }
 
 .projects__container .slider .arrow__prev:hover, .skills__container .slider .arrow__prev:hover, .education__container .slider .arrow__prev:hover, .languages__container .slider .arrow__prev:hover, .projects__container .slider .arrow__next:hover, .skills__container .slider .arrow__next:hover, .education__container .slider .arrow__next:hover, .languages__container .slider .arrow__next:hover {
