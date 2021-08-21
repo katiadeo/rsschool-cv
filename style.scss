@@ -233,7 +233,7 @@ ul {
 
     & .header__nav {
         visibility: visible;
-        clip-path: circle(150%);
+        clip-path: circle(100%);
         animation: pulse 1.5s;
         transition: opacity 0.4s ease-in-out;
     }
